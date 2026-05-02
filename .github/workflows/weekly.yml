@@ -3,7 +3,7 @@ name: Weekly Filmarks Update
 on:
   schedule:
     - cron: "0 0 * * 1"  # 毎週月曜 0:00 UTC（日本時間 月曜 9:00）
-  workflow_dispatch:       # 手動実行ボタンも使えるようにする
+  workflow_dispatch:       # 手動実行ボタン
 
 jobs:
   update:
@@ -22,6 +22,8 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: スクレイパー実行
+        env:
+          TMDB_KEY: ${{ secrets.TMDB_KEY }}
         run: python scraper.py
 
       - name: 変更をコミット&プッシュ
