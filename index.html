@@ -7,44 +7,34 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f5f0; color: #1a1a1a; min-height: 100vh; }
-
   header { background: #1a1a1a; color: #fff; padding: 1.5rem 2rem; }
   header h1 { font-size: 1.25rem; font-weight: 500; }
   header p { font-size: 0.8rem; color: #888; margin-top: 4px; }
-
   .container { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
-
   .search-area { background: #fff; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #e5e5e5; }
   .search-area h2 { font-size: 0.85rem; font-weight: 500; color: #666; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: .05em; }
-
   .genre-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.25rem; }
   .genre-btn { padding: 6px 14px; border-radius: 99px; border: 1px solid #ddd; background: #fff; font-size: 13px; cursor: pointer; transition: all .15s; }
   .genre-btn:hover { border-color: #999; }
   .genre-btn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
-
   .search-btn { width: 100%; padding: 10px; background: #1a1a1a; color: #fff; border: none; border-radius: 8px; font-size: 14px; cursor: pointer; transition: opacity .15s; }
   .search-btn:hover { opacity: .85; }
-
   .status { font-size: 12px; color: #999; text-align: right; margin-bottom: 1rem; }
-
   .section-title { font-size: 14px; font-weight: 500; color: #444; margin-bottom: 1rem; padding-bottom: 8px; border-bottom: 1px solid #e5e5e5; display: flex; align-items: center; gap: 8px; }
   .badge { font-size: 11px; padding: 2px 8px; border-radius: 99px; }
   .badge-now { background: #e8f5e1; color: #2d6a1a; }
   .badge-soon { background: #fff3e0; color: #b45309; }
-
   .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 2.5rem; }
   .movie-card { background: #fff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; transition: transform .15s; cursor: pointer; }
   .movie-card:hover { transform: translateY(-2px); }
   .movie-poster { width: 100%; aspect-ratio: 2/3; object-fit: cover; background: #eee; display: block; }
-  .movie-poster.no-image { display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #ccc; }
+  .no-image { display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #ccc; aspect-ratio: 2/3; background: #eee; }
   .movie-info { padding: 10px; }
   .movie-title { font-size: 12px; font-weight: 500; line-height: 1.4; margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .movie-meta { font-size: 11px; color: #999; }
   .movie-release { font-size: 11px; color: #b45309; margin-top: 2px; font-weight: 500; }
-
   .empty { text-align: center; padding: 3rem; color: #aaa; font-size: 14px; }
   .loading { text-align: center; padding: 2rem; color: #aaa; font-size: 13px; }
-
   @media (max-width: 600px) {
     header { padding: 1rem; }
     .movie-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
@@ -52,41 +42,33 @@
 </style>
 </head>
 <body>
-
 <header>
   <h1>Rosskenの映画おすすめ</h1>
   <p>914本の視聴履歴から、まだ観ていない映画を探す</p>
 </header>
-
 <div class="container">
   <div class="search-area">
     <h2>ジャンルを選んで検索</h2>
     <div class="genre-grid" id="genreGrid"></div>
     <button class="search-btn" onclick="search()">このジャンルのおすすめを探す</button>
   </div>
-
   <div class="status" id="status"></div>
-
   <div id="results"></div>
 </div>
-
 <script>
 const TMDB_KEY = "72a10af0cd80c5de6028e8401d682cc6";
 const TMDB_BASE = "https://api.themoviedb.org/3";
-const IMG_BASE = "https://image.tmdb.org/t/p/w342";
+const IMG_BASE  = "https://image.tmdb.org/t/p/w342";
 
-// TMDBジャンルID（日本語名対応）
 const GENRES = [
   { id: 28,    name: "アクション" },
   { id: 12,    name: "アドベンチャー" },
   { id: 16,    name: "アニメーション" },
   { id: 35,    name: "コメディ" },
   { id: 80,    name: "クライム" },
-  { id: 99,    name: "ドキュメンタリー" },
   { id: 18,    name: "ドラマ" },
   { id: 10751, name: "ファミリー" },
   { id: 14,    name: "ファンタジー" },
-  { id: 36,    name: "歴史" },
   { id: 27,    name: "ホラー" },
   { id: 10402, name: "音楽" },
   { id: 9648,  name: "ミステリー" },
@@ -96,16 +78,24 @@ const GENRES = [
   { id: 10752, name: "戦争" },
 ];
 
-let watchedIds = new Set();
+// 視聴済みデータ（TMDB IDベース + タイトルフォールバック）
+let watchedTmdbIds = new Set();
+let watchedTitlesNorm = new Set();
 let selectedGenres = [];
 
-// ジャンルボタンを生成
+// タイトル正規化
+function norm(t) {
+  return (t || "").toLowerCase()
+    .replace(/[\s　\/／:：\-－・\.。、,，！!？?「」『』【】（）()]/g, "")
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0));
+}
+
+// ジャンルボタン生成
 const grid = document.getElementById("genreGrid");
 GENRES.forEach(g => {
   const btn = document.createElement("button");
   btn.className = "genre-btn";
   btn.textContent = g.name;
-  btn.dataset.id = g.id;
   btn.onclick = () => {
     btn.classList.toggle("active");
     if (selectedGenres.includes(g.id)) {
@@ -117,15 +107,19 @@ GENRES.forEach(g => {
   grid.appendChild(btn);
 });
 
-// 視聴済みIDを読み込む
+// 視聴済みデータ読み込み
 async function loadWatched() {
   try {
     const res = await fetch("movies.json");
     const data = await res.json();
-    // FilmarksのIDをTMDBのIDと照合するため、タイトルベースでSetを作る
-    // ※本来はFilmarks IDとTMDB IDのマッピングが必要だが、
-    //   ここではタイトルの照合で近似する
-    data.movies.forEach(m => watchedIds.add(m.title));
+    data.movies.forEach(m => {
+      // TMDB IDがあればIDで、なければタイトルで照合
+      if (m.tmdb_id) {
+        watchedTmdbIds.add(m.tmdb_id);
+      }
+      watchedTitlesNorm.add(norm(m.title));
+      if (m.title_en) watchedTitlesNorm.add(norm(m.title_en));
+    });
     document.getElementById("status").textContent =
       `視聴済み ${data.total}本 ／ 最終更新: ${data.last_updated?.slice(0,10) ?? "不明"}`;
   } catch {
@@ -133,25 +127,34 @@ async function loadWatched() {
   }
 }
 
-// TMDBから映画を取得
-async function fetchMovies(genreIds, releasedOnly) {
+// 視聴済み判定（ID優先 → タイトルフォールバック）
+function isWatched(movie) {
+  if (watchedTmdbIds.has(movie.id)) return true;
+  const n = norm(movie.title);
+  const no = norm(movie.original_title);
+  for (const wt of watchedTitlesNorm) {
+    if (wt.length > 3 && (wt === n || wt === no)) return true;
+  }
+  return false;
+}
+
+// TMDBから映画取得
+async function fetchMovies(genreIds, upcoming) {
   const today = new Date().toISOString().slice(0, 10);
   const params = new URLSearchParams({
     api_key: TMDB_KEY,
     language: "ja-JP",
-    sort_by: "popularity.desc",
     with_genres: genreIds.join(","),
-    "vote_count.gte": 100,
     page: 1,
   });
-
-  if (releasedOnly) {
-    params.set("primary_release_date.lte", today);
-  } else {
+  if (upcoming) {
     params.set("primary_release_date.gte", today);
     params.set("sort_by", "primary_release_date.asc");
+  } else {
+    params.set("primary_release_date.lte", today);
+    params.set("sort_by", "popularity.desc");
+    params.set("vote_count.gte", "50");
   }
-
   const res = await fetch(`${TMDB_BASE}/discover/movie?${params}`);
   const data = await res.json();
   return data.results ?? [];
@@ -161,18 +164,14 @@ function renderCard(movie, showRelease = false) {
   const card = document.createElement("div");
   card.className = "movie-card";
   card.onclick = () => window.open(`https://www.themoviedb.org/movie/${movie.id}`, "_blank");
-
-  const posterUrl = movie.poster_path
-    ? `${IMG_BASE}${movie.poster_path}`
-    : null;
-
+  const posterUrl = movie.poster_path ? `${IMG_BASE}${movie.poster_path}` : null;
   card.innerHTML = `
     ${posterUrl
       ? `<img class="movie-poster" src="${posterUrl}" alt="${movie.title}" loading="lazy">`
-      : `<div class="movie-poster no-image">🎬</div>`}
+      : `<div class="no-image">🎬</div>`}
     <div class="movie-info">
       <div class="movie-title">${movie.title}</div>
-      <div class="movie-meta">⭐ ${movie.vote_average?.toFixed(1) ?? "-"}</div>
+      <div class="movie-meta">★ ${movie.vote_average?.toFixed(1) ?? "-"}</div>
       ${showRelease && movie.release_date
         ? `<div class="movie-release">公開: ${movie.release_date}</div>`
         : ""}
@@ -186,53 +185,46 @@ async function search() {
     alert("ジャンルを1つ以上選んでください");
     return;
   }
-
   const resultsEl = document.getElementById("results");
   resultsEl.innerHTML = '<div class="loading">検索中...</div>';
-
   try {
     const [released, upcoming] = await Promise.all([
-      fetchMovies(selectedGenres, true),
       fetchMovies(selectedGenres, false),
+      fetchMovies(selectedGenres, true),
     ]);
 
-    // 視聴済みを除外（タイトル照合）
     const filterWatched = (movies) =>
-      movies.filter(m => !watchedIds.has(m.title)).slice(0, 12);
+      movies.filter(m => !isWatched(m)).slice(0, 12);
 
     const filteredReleased = filterWatched(released);
-    const filteredUpcoming = filterWatched(upcoming);
+    const filteredUpcoming  = filterWatched(upcoming);
 
     resultsEl.innerHTML = "";
 
-    // 公開済みセクション
+    // 公開済み
     const sec1 = document.createElement("div");
     sec1.innerHTML = `<div class="section-title">公開済み <span class="badge badge-now">すぐ観れる</span></div>`;
-    const grid1 = document.createElement("div");
-    grid1.className = "movie-grid";
-    if (filteredReleased.length === 0) {
-      grid1.innerHTML = '<div class="empty">該当作品が見つかりませんでした</div>';
-    } else {
-      filteredReleased.forEach(m => grid1.appendChild(renderCard(m)));
-    }
-    sec1.appendChild(grid1);
+    const g1 = document.createElement("div");
+    g1.className = "movie-grid";
+    filteredReleased.length === 0
+      ? g1.innerHTML = '<div class="empty">該当作品が見つかりませんでした</div>'
+      : filteredReleased.forEach(m => g1.appendChild(renderCard(m)));
+    sec1.appendChild(g1);
     resultsEl.appendChild(sec1);
 
-    // 公開予定セクション
+    // 公開予定
     const sec2 = document.createElement("div");
     sec2.innerHTML = `<div class="section-title">公開予定 <span class="badge badge-soon">これから</span></div>`;
-    const grid2 = document.createElement("div");
-    grid2.className = "movie-grid";
-    if (filteredUpcoming.length === 0) {
-      grid2.innerHTML = '<div class="empty">公開予定の作品が見つかりませんでした</div>';
-    } else {
-      filteredUpcoming.forEach(m => grid2.appendChild(renderCard(m, true)));
-    }
-    sec2.appendChild(grid2);
+    const g2 = document.createElement("div");
+    g2.className = "movie-grid";
+    filteredUpcoming.length === 0
+      ? g2.innerHTML = '<div class="empty">公開予定の作品が見つかりませんでした</div>'
+      : filteredUpcoming.forEach(m => g2.appendChild(renderCard(m, true)));
+    sec2.appendChild(g2);
     resultsEl.appendChild(sec2);
 
   } catch (e) {
-    resultsEl.innerHTML = `<div class="empty">エラーが発生しました。TMDBのAPIキーを確認してください。<br><small>${e.message}</small></div>`;
+    resultsEl.innerHTML = `<div class="empty">エラーが発生しました。<br><small>${e.message}</small></div>`;
   }
 }
 
