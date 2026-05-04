@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-02T01:45:56.662377",
+  "last_updated": "2026-05-04T09:08:55.911883",
   "total": 964,
   "movies": [
     {
@@ -6620,139 +6620,185 @@
       "id": "91341",
       "title": "スパイダーマン：アクロス・ザ・スパイダーバース",
       "score": 4.3,
-      "filmarks_url": "https://filmarks.com/movies/91341"
+      "filmarks_url": "https://filmarks.com/movies/91341",
+      "tmdb_id": 569094,
+      "title_en": "Spider-Man: Across the Spider-Verse"
     },
     {
       "id": "92454",
       "title": "ザ・フラッシュ",
       "score": 4.2,
-      "filmarks_url": "https://filmarks.com/movies/92454"
+      "filmarks_url": "https://filmarks.com/movies/92454",
+      "tmdb_id": 298618,
+      "title_en": "The Flash"
     },
     {
       "id": "78019",
       "title": "ガーディアンズ・オブ・ギャラクシー：VOLUME 3",
       "score": 4.3,
-      "filmarks_url": "https://filmarks.com/movies/78019"
+      "filmarks_url": "https://filmarks.com/movies/78019",
+      "tmdb_id": 447365,
+      "title_en": "Guardians of the Galaxy Vol. 3"
     },
     {
       "id": "55572",
       "title": "インターステラー",
       "score": 4.6,
-      "filmarks_url": "https://filmarks.com/movies/55572"
+      "filmarks_url": "https://filmarks.com/movies/55572",
+      "tmdb_id": 157336,
+      "title_en": "Interstellar"
     },
     {
       "id": "73165",
       "title": "ロード・オブ・ザ・リング／旅の仲間〈EE〉",
       "score": 4.6,
-      "filmarks_url": "https://filmarks.com/movies/73165"
+      "filmarks_url": "https://filmarks.com/movies/73165",
+      "tmdb_id": null,
+      "title_en": ""
     },
     {
       "id": "73166",
       "title": "ロード・オブ・ザ・リング／二つの塔〈EE〉",
       "score": 4.6,
-      "filmarks_url": "https://filmarks.com/movies/73166"
+      "filmarks_url": "https://filmarks.com/movies/73166",
+      "tmdb_id": null,
+      "title_en": ""
     },
     {
       "id": "73167",
       "title": "ロード・オブ・ザ・リング／王の帰還〈EE〉",
       "score": 4.6,
-      "filmarks_url": "https://filmarks.com/movies/73167"
+      "filmarks_url": "https://filmarks.com/movies/73167",
+      "tmdb_id": null,
+      "title_en": ""
     },
     {
       "id": "26320",
       "title": "アバター",
       "score": 4.6,
-      "filmarks_url": "https://filmarks.com/movies/26320"
+      "filmarks_url": "https://filmarks.com/movies/26320",
+      "tmdb_id": 83533,
+      "title_en": "Avatar: Fire and Ash"
     },
     {
       "id": "60414",
       "title": "アベンジャーズ／エンドゲーム",
       "score": 4.4,
-      "filmarks_url": "https://filmarks.com/movies/60414"
+      "filmarks_url": "https://filmarks.com/movies/60414",
+      "tmdb_id": 299534,
+      "title_en": "Avengers: Endgame"
     },
     {
       "id": "9831",
       "title": "クレヨンしんちゃん 嵐を呼ぶモーレツ！オトナ帝国の逆襲",
       "score": 4.1,
-      "filmarks_url": "https://filmarks.com/movies/9831"
+      "filmarks_url": "https://filmarks.com/movies/9831",
+      "tmdb_id": 37280,
+      "title_en": "クレヨンしんちゃん 嵐を呼ぶ モーレツ！オトナ帝国の逆襲"
     },
     {
       "id": "100400",
       "title": "RRR",
       "score": 4.0,
-      "filmarks_url": "https://filmarks.com/movies/100400"
+      "filmarks_url": "https://filmarks.com/movies/100400",
+      "tmdb_id": 579974,
+      "title_en": "రౌద్రం రణం రుధిరం"
     },
     {
       "id": "53954",
       "title": "きっと、うまくいく",
       "score": 4.2,
-      "filmarks_url": "https://filmarks.com/movies/53954"
+      "filmarks_url": "https://filmarks.com/movies/53954",
+      "tmdb_id": 20453,
+      "title_en": "3 Idiots"
     },
     {
       "id": "68556",
       "title": "アリー/ スター誕生",
       "score": 4.2,
-      "filmarks_url": "https://filmarks.com/movies/68556"
+      "filmarks_url": "https://filmarks.com/movies/68556",
+      "tmdb_id": 332562,
+      "title_en": "A Star Is Born"
     },
     {
       "id": "73709",
       "title": "ボヘミアン・ラプソディ",
       "score": 4.2,
-      "filmarks_url": "https://filmarks.com/movies/73709"
+      "filmarks_url": "https://filmarks.com/movies/73709",
+      "tmdb_id": 424694,
+      "title_en": "Bohemian Rhapsody"
     },
     {
       "id": "76724",
       "title": "オンリー・ザ・ブレイブ",
       "score": 4.2,
-      "filmarks_url": "https://filmarks.com/movies/76724"
+      "filmarks_url": "https://filmarks.com/movies/76724",
+      "tmdb_id": 395991,
+      "title_en": "Only the Brave"
     },
     {
       "id": "68660",
       "title": "ワンダー 君は太陽",
       "score": 4.2,
-      "filmarks_url": "https://filmarks.com/movies/68660"
+      "filmarks_url": "https://filmarks.com/movies/68660",
+      "tmdb_id": 406997,
+      "title_en": "Wonder"
     },
     {
       "id": "96267",
       "title": "劇場版 呪術廻戦 0",
       "score": 4.1,
-      "filmarks_url": "https://filmarks.com/movies/96267"
+      "filmarks_url": "https://filmarks.com/movies/96267",
+      "tmdb_id": 810693,
+      "title_en": "劇場版 呪術廻戦 0"
     },
     {
       "id": "86962",
       "title": "劇場版「鬼滅の刃」無限列車編",
       "score": 4.1,
-      "filmarks_url": "https://filmarks.com/movies/86962"
+      "filmarks_url": "https://filmarks.com/movies/86962",
+      "tmdb_id": 635302,
+      "title_en": "劇場版「鬼滅の刃」無限列車編"
     },
     {
       "id": "98596",
       "title": "THE FIRST SLAM DUNK",
       "score": 4.0,
-      "filmarks_url": "https://filmarks.com/movies/98596"
+      "filmarks_url": "https://filmarks.com/movies/98596",
+      "tmdb_id": 783675,
+      "title_en": "THE FIRST SLAM DUNK"
     },
     {
       "id": "107171",
       "title": "君たちはどう生きるか",
       "score": 3.8,
-      "filmarks_url": "https://filmarks.com/movies/107171"
+      "filmarks_url": "https://filmarks.com/movies/107171",
+      "tmdb_id": 508883,
+      "title_en": "君たちはどう生きるか"
     },
     {
       "id": "106662",
       "title": "マイ・エレメント",
       "score": 4.2,
-      "filmarks_url": "https://filmarks.com/movies/106662"
+      "filmarks_url": "https://filmarks.com/movies/106662",
+      "tmdb_id": 976573,
+      "title_en": "Elemental"
     },
     {
       "id": "91015",
       "title": "キングダム2 遥かなる大地へ",
       "score": 3.9,
-      "filmarks_url": "https://filmarks.com/movies/91015"
+      "filmarks_url": "https://filmarks.com/movies/91015",
+      "tmdb_id": 961420,
+      "title_en": "キングダム2 遥かなる大地へ"
     },
     {
       "id": "80582",
       "title": "グリーンブック",
       "score": 4.1,
-      "filmarks_url": "https://filmarks.com/movies/80582"
+      "filmarks_url": "https://filmarks.com/movies/80582",
+      "tmdb_id": 490132,
+      "title_en": "Green Book"
     }
   ]
 }
