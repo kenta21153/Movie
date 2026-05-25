@@ -1,7 +1,14 @@
 {
-  "last_updated": "2026-05-18T12:53:46.221647",
-  "total": 972,
+  "last_updated": "2026-05-25T12:52:09.728062",
+  "total": 973,
   "movies": [
+    {
+      "filmarks_id": "114240",
+      "title": "スター・ウォーズ／マンダロリアン・アンド・グローグー",
+      "score": 3.9,
+      "tmdb_id": 1228710,
+      "title_en": "Star Wars: The Mandalorian and Grogu"
+    },
     {
       "filmarks_id": "99277",
       "title": "アメリカン・アンダードッグ",
