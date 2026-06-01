@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-05-25T12:52:09.728062",
-  "total": 973,
+  "last_updated": "2026-06-01T19:31:31.609561",
+  "total": 975,
   "movies": [
+    {
+      "filmarks_id": "77796",
+      "title": "万引き家族",
+      "score": 3.9,
+      "tmdb_id": 505192,
+      "title_en": "万引き家族"
+    },
+    {
+      "filmarks_id": "65596",
+      "title": "ダンガル　きっと、つよくなる",
+      "score": 4.0,
+      "tmdb_id": 360814,
+      "title_en": "दंगल"
+    },
     {
       "filmarks_id": "114240",
       "title": "スター・ウォーズ／マンダロリアン・アンド・グローグー",
