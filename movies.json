@@ -1,7 +1,28 @@
 {
-  "last_updated": "2026-06-01T19:31:31.609561",
-  "total": 975,
+  "last_updated": "2026-06-08T04:44:52.073586",
+  "total": 978,
   "movies": [
+    {
+      "filmarks_id": "126084",
+      "title": "マスターズ・オブ・ユニバース",
+      "score": 3.0,
+      "tmdb_id": 454639,
+      "title_en": "Masters of the Universe"
+    },
+    {
+      "filmarks_id": "120414",
+      "title": "Mr.ノボカイン",
+      "score": 3.7,
+      "tmdb_id": 1195506,
+      "title_en": "Novocaine"
+    },
+    {
+      "filmarks_id": "123923",
+      "title": "GOAT／ゴート 史上最高をめざせ！",
+      "score": 3.8,
+      "tmdb_id": 1297842,
+      "title_en": "GOAT"
+    },
     {
       "filmarks_id": "77796",
       "title": "万引き家族",
