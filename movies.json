@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-06-08T04:44:52.073586",
-  "total": 978,
+  "last_updated": "2026-06-15T05:04:28.240629",
+  "total": 980,
   "movies": [
+    {
+      "filmarks_id": "124004",
+      "title": "モータルコンバット／ネクストラウンド",
+      "score": 2.0,
+      "tmdb_id": 931285,
+      "title_en": "Mortal Kombat II"
+    },
+    {
+      "filmarks_id": "117556",
+      "title": "Michael／マイケル",
+      "score": 4.0,
+      "tmdb_id": 936075,
+      "title_en": "Michael"
+    },
     {
       "filmarks_id": "126084",
       "title": "マスターズ・オブ・ユニバース",
