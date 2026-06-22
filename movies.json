@@ -1,7 +1,14 @@
 {
-  "last_updated": "2026-06-15T05:04:28.240629",
-  "total": 980,
+  "last_updated": "2026-06-22T05:05:07.922814",
+  "total": 981,
   "movies": [
+    {
+      "filmarks_id": "8279",
+      "title": "スピリット　スタリオン・オブ・ザ・シマロン",
+      "score": 3.9,
+      "tmdb_id": null,
+      "title_en": ""
+    },
     {
       "filmarks_id": "124004",
       "title": "モータルコンバット／ネクストラウンド",
