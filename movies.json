@@ -1,7 +1,28 @@
 {
-  "last_updated": "2026-07-13T03:34:18.102628",
-  "total": 991,
+  "last_updated": "2026-07-20T03:55:57.602313",
+  "total": 994,
   "movies": [
+    {
+      "filmarks_id": "24544",
+      "title": "時をかける少女",
+      "score": 1.0,
+      "tmdb_id": 14069,
+      "title_en": "時をかける少女"
+    },
+    {
+      "filmarks_id": "123717",
+      "title": "キングダム 魂の決戦",
+      "score": 4.0,
+      "tmdb_id": 1511675,
+      "title_en": "キングダム 魂の決戦"
+    },
+    {
+      "filmarks_id": "126268",
+      "title": "オブセッション 災愛",
+      "score": 5.0,
+      "tmdb_id": 1339713,
+      "title_en": "Obsession"
+    },
     {
       "filmarks_id": "124312",
       "title": "シャドウズ・エッジ",
