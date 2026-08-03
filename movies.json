@@ -1,7 +1,14 @@
 {
-  "last_updated": "2026-07-27T03:40:50.751452",
-  "total": 996,
+  "last_updated": "2026-08-03T03:33:07.892769",
+  "total": 997,
   "movies": [
+    {
+      "filmarks_id": "119606",
+      "title": "スパイダーマン：ブランド・ニュー・デイ",
+      "score": 4.0,
+      "tmdb_id": 969681,
+      "title_en": "Spider-Man: Brand New Day"
+    },
     {
       "filmarks_id": "126068",
       "title": "映画ちいかわ 人魚の島のひみつ",
