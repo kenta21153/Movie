@@ -1,7 +1,14 @@
 {
-  "last_updated": "2026-08-31T04:56:07.290347",
-  "total": 1005,
+  "last_updated": "2026-09-07T04:00:20.731567",
+  "total": 1006,
   "movies": [
+    {
+      "filmarks_id": "122932",
+      "title": "WEAPONS／ウェポンズ",
+      "score": 3.8,
+      "tmdb_id": 1078605,
+      "title_en": "Weapons"
+    },
     {
       "filmarks_id": "123322",
       "title": "ラスト・サバイバー",
