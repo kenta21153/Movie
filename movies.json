@@ -1,7 +1,28 @@
 {
-  "last_updated": "2026-09-28T04:49:50.293701",
-  "total": 1011,
+  "last_updated": "2026-10-05T05:04:05.419368",
+  "total": 1014,
   "movies": [
+    {
+      "filmarks_id": "126412",
+      "title": "ディスクロージャー・デイ",
+      "score": 5.0,
+      "tmdb_id": 1275779,
+      "title_en": "Disclosure Day"
+    },
+    {
+      "filmarks_id": "129215",
+      "title": "ハート・オブ・ビースト",
+      "score": 1.0,
+      "tmdb_id": 1263337,
+      "title_en": "Heart of the Beast"
+    },
+    {
+      "filmarks_id": "120406",
+      "title": "８番出口",
+      "score": 2.0,
+      "tmdb_id": 1408208,
+      "title_en": "８番出口"
+    },
     {
       "filmarks_id": "10561",
       "title": "トワイライト〜初恋〜",
@@ -3009,8 +3030,8 @@
       "filmarks_id": "25994",
       "title": "僕はラジオ",
       "score": 4.0,
-      "tmdb_id": null,
-      "title_en": ""
+      "tmdb_id": 13920,
+      "title_en": "Radio"
     },
     {
       "filmarks_id": "75400",
