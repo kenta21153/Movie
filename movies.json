@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-10-05T05:04:05.419368",
-  "total": 1014,
+  "last_updated": "2026-10-12T05:25:17.852705",
+  "total": 1016,
   "movies": [
+    {
+      "filmarks_id": "126376",
+      "title": "バイオハザード",
+      "score": 2.0,
+      "tmdb_id": 1423191,
+      "title_en": "Resident Evil"
+    },
+    {
+      "filmarks_id": "126422",
+      "title": "DIGGER／ディガー",
+      "score": 3.8,
+      "tmdb_id": 1248832,
+      "title_en": "Digger"
+    },
     {
       "filmarks_id": "126412",
       "title": "ディスクロージャー・デイ",
