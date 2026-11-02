@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-10-26T04:12:47.073207",
-  "total": 1017,
+  "last_updated": "2026-11-02T05:28:07.132009",
+  "total": 1019,
   "movies": [
+    {
+      "filmarks_id": "126379",
+      "title": "クレイフェイス",
+      "score": 1.0,
+      "tmdb_id": 1400940,
+      "title_en": "Clayface"
+    },
+    {
+      "filmarks_id": "121958",
+      "title": "マテリアリスト 結婚の条件",
+      "score": 1.0,
+      "tmdb_id": 1136867,
+      "title_en": "Materialists"
+    },
     {
       "filmarks_id": "124838",
       "title": "ストリートファイター／ザ・ムービー",
