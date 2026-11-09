@@ -1,7 +1,14 @@
 {
-  "last_updated": "2026-11-02T05:28:07.132009",
-  "total": 1019,
+  "last_updated": "2026-11-09T05:42:14.023820",
+  "total": 1020,
   "movies": [
+    {
+      "filmarks_id": "125685",
+      "title": "ゴジラ-0.0",
+      "score": 5.0,
+      "tmdb_id": 1381071,
+      "title_en": "ゴジラ-0.0"
+    },
     {
       "filmarks_id": "126379",
       "title": "クレイフェイス",
@@ -4794,8 +4801,8 @@
       "filmarks_id": "109193",
       "title": "ヘンリー・シュガーのワンダフルな物語",
       "score": 3.0,
-      "tmdb_id": null,
-      "title_en": ""
+      "tmdb_id": 923939,
+      "title_en": "The Wonderful Story of Henry Sugar"
     },
     {
       "filmarks_id": "112567",
